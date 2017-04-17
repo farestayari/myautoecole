@@ -27,5 +27,6 @@ class User extends Authenticatable
     public function user()
     {
       return $this->hasMany('\App\Personnel');
+      return $this->hasMany('App\Candidat');
     }
 }

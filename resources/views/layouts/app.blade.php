@@ -112,7 +112,7 @@
 					</a>
 					<ul>
 						<li>
-							<a href="#">
+							<a href="{{url('/candidat')}}">
 								<span class="title">Fiche</span>
 							</a>
 						</li>

@@ -24,3 +24,5 @@ Route::get('/', 'HomeController@index');
 // });
 
 Route::resource('/personnel', 'autoPersonnelController');
+
+Route::resource('/candidat','CandidatController');
