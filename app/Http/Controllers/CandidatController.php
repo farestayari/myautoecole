@@ -66,6 +66,10 @@ class CandidatController extends Controller
     public function edit($id)
     {
         //
+        $candidat=Candidat::findOrFail($id);
+
+
+        return view('modules.candidat.edit', compact('candidat'));
     }
 
     /**
@@ -78,6 +82,10 @@ class CandidatController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        Candidat::find($id)->update($request->all());
+        return redirect('candidat');
+
     }
 
     /**

@@ -91,6 +91,39 @@
             {{--});--}}
             {{--});--}}
             {{--</script>--}}
+            <script>
+                function myFunction() {
+                    // Declare variables
+                    var input, filter, table, tr, td, i;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("example-2");
+                    tr = table.getElementsByTagName("tr");
+
+                    // Loop through all table rows, and hide those who don't match the search query
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[0];
+                        if (td) {
+                            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                            } else {
+                                tr[i].style.display = "none";
+                            }
+                        }
+                    }
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[4];
+                        if (td) {
+                            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                            } else {
+                                tr[i].style.display = "none";
+                            }
+                        }
+                    }
+                }
+            </script>
+            <input class="form-control input-sm" type="text" id="myInput" onkeyup="myFunction()" placeholder="recherche">
 
             <table class="table table-bordered table-striped" id="example-2">
                 <thead>
@@ -113,7 +146,7 @@
                             <td>{{$candidat->telephone}}</td>
                             <td>{{$candidat->cin}}</td>
                             <td>
-                                <a href="#" class="btn btn-secondary btn-sm btn-icon icon-left">
+                                <a href="{{url("candidat/$candidat->id/edit")}}" class="btn btn-secondary btn-sm btn-icon icon-left">
                                     Edit
                                 </a>
 

@@ -26,7 +26,8 @@ class AutoPersonnelController extends Controller
     {
         //
         $personnels = Personnel :: where('user_id', Auth::id())->get();
-        return view('modules.personnel.index',compact('personnels'));
+//        $personnels= Auth::user()->personnels;
+        return view('modules.personnel.index',['personnels'=>$personnels]);
     }
 
     /**
@@ -73,6 +74,7 @@ class AutoPersonnelController extends Controller
     public function edit($id)
     {
         //
+        return view('modules.personnel.edit');
     }
 
     /**
